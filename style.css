@@ -1,0 +1,80 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(208, 231, 252);
+}
+
+.fundoJanelaCentral {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+#janelaCentral {
+    position: absolute;
+    display: flex;
+    min-height: 300px;
+    width: 580px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: black 1px 1px 4px;
+    padding: 20px;
+}
+
+/*--------------- LINHA DE CADOS -------------*/
+
+textarea {
+    font-size: 16px;
+    height: 20px;
+    width: 150px;
+    text-align: left;
+    padding: 5px;
+}
+
+#paragrafoNumVoo {
+    position: absolute;
+    top: 0;
+    left: 25px;
+}
+
+textarea#textNumeroVoo {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    resize: none;
+    outline: none;
+}
+
+#origemDestino {
+    position: absolute;
+    top: 0;
+    left: 205px;
+}
+
+textarea#textOrigemDestino {
+    position: absolute;
+    top: 40px;
+    left: 200px;
+    resize: none;
+    outline: none;
+}
+
+#pesoCarga {
+    position: absolute;
+    top: 0;
+    left: 385px;
+}
+
+textarea#textPesoCarga {
+    position: absolute;
+    top: 40px;
+    left: 380px;
+    resize: none;
+    outline: none;
+}
