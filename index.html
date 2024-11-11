@@ -9,19 +9,27 @@
 <body>
     <div class="fundoJanelaCentral">
         <div id="janelaCentral">
-            <div id="linhaDeDados">
-                <p id="paragrafoNumVoo">Número do Voo</p>
-                <textarea name="textNumeroVoo" id="textNumeroVoo" ></textarea>
-                <p id="origemDestino">Origem e Destino</p>
-                <textarea name="textOrigemDestino" id="textOrigemDestino"></textarea>
-                <p id="pesoCarga">Peso da Carga</p>
-                <textarea name="textPesoCarga" id="textPesoCarga"></textarea>
-                <button id="botaoEnviar">Enviar</button>
-                <button id="botaoAdd">+</button>
+            <div class="linhaDeDados">
+                <div class="grupoDados">
+                    <p>Número do Voo</p>
+                    <textarea name="textNumeroVoo" id="textNumeroVoo-0"></textarea>
+                </div>
+                <div class="grupoDados">
+                    <p>Origem e Destino</p>
+                    <textarea name="textOrigemDestino" id="textOrigemDestino-0"></textarea>
+                </div>
+                <div class="grupoDados">
+                    <p>Peso da Carga</p>
+                    <div class="inputComBotao">
+                        <textarea name="textPesoCarga" id="textPesoCarga-0"></textarea>
+                        
+                        <button id="botaoRemover" onclick="removerLinha(this)">✖</button>
+                    </div>
+                </div>
             </div>
         </div>
+        <button id="botaoAdd" onclick="addLinha()">+</button>
     </div>
-    
 </body>
 <script src="script.js"></script>
 </html>

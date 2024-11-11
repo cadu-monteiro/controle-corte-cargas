@@ -2,22 +2,28 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: rgb(208, 231, 252);
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
 }
 
 .fundoJanelaCentral {
-    position: absolute;
-    display: flex;
+    position: relative;
     top: 50%;
     left: 50%;
+    height: 600px;
+    width: 820px;
     transform: translate(-50%, -50%);
     
 }
 
 #janelaCentral {
-    position: absolute;
+    position: relative;
     display: flex;
-    min-height: 300px;
-    width: 650px;
+    flex-direction: column;
+    max-height: 490px;
+    height: 490px;
+    width: 600px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -25,9 +31,10 @@ body {
     border-radius: 5px;
     box-shadow: black 1px 1px 4px;
     padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    overflow-y: auto;
 }
-
-/*--------------- LINHA DE CADOS -------------*/
 
 textarea {
     font-size: 16px;
@@ -36,62 +43,76 @@ textarea {
     text-align: left;
     padding: 5px;
     border-radius: 3px;
-}
-
-#paragrafoNumVoo {
-    position: absolute;
-    top: 0;
-    left: 25px;
-}
-
-textarea#textNumeroVoo {
-    position: absolute;
-    top: 40px;
-    left: 20px;
     resize: none;
     outline: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-transform: uppercase;
 }
 
-#origemDestino {
-    position: absolute;
-    top: 0;
-    left: 205px;
-}
-
-textarea#textOrigemDestino {
-    position: absolute;
-    top: 40px;
-    left: 200px;
-    resize: none;
-    outline: none;
-}
-
-#pesoCarga {
-    position: absolute;
-    top: 0;
-    left: 385px;
-}
-
-textarea#textPesoCarga {
-    position: absolute;
-    top: 40px;
-    left: 380px;
-    resize: none;
-    outline: none;
-}
-
-button#botaoEnviar {
-    position: absolute;
-    top: 40px;
-    left: 560px;
-    height: 32px;
+p {
+    margin-left: 12px;
 }
 
 button#botaoAdd {
     position: absolute;
-    top: 40px;
-    left: 630px;
+    top: 35px;
+    right: 0px;
     height: 32px;
     width: 32px;
-    font-size: 18px;
+    font-size: 25px;
+    line-height: 0;
 }
+
+button#botaoEnviar {
+    position: relative;
+    top: -7px;
+    height: 32px;
+    width: 32px;
+    margin-left: 0px;
+    font-size: 25px;
+    padding: 0;
+    text-align: center;
+    line-height: 0;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: gray;
+}
+button#botaoEnviar:hover {
+    color: rgb(10, 2, 255);
+    border: solid 1px rgb(167, 193, 254);
+    border-radius: 3px;
+}
+
+button#botaoRemover {
+    position: relative;
+    top: -9px;
+    height: 32px;
+    width: 32px;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0;
+    text-align: center;
+    line-height: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: gray;
+}
+button#botaoRemover:hover {
+    color: red;
+    border: solid 1px rgb(255, 178, 178);
+    border-radius: 3px;
+}
+
+
+
+/*--------------- LINHA DE CADOS -------------*/
+
+
+.linhaDeDados {
+    display: flex;
+    flex-direction: row;
+}
+
+
