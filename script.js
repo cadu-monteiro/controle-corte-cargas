@@ -4,15 +4,15 @@ function addLinha() {
     novaLinha.className = 'linhaDeDados'
     novaLinha.innerHTML = `<div class="linhaDeDados">
                 <div class="grupoDados">
-                    <p>Número do Voo</p>
+                    <p>No. Voo</p>
                     <textarea name="textNumeroVoo"></textarea>
                 </div>
                 <div class="grupoDados">
-                    <p>Origem e Destino</p>
+                    <p>DEP/DEST</p>
                     <textarea name="textOrigemDestino"></textarea>
                 </div>
                 <div class="grupoDados">
-                    <p>Peso da Carga</p>
+                    <p>Peso Carga</p>
                     <textarea name="textPesoCarga"></textarea>
                 </div>
                 <div class="grupoDados">

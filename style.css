@@ -1,27 +1,24 @@
-body {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(185, 221, 255);
-    overflow-y: auto;
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(205, 231, 255);
     padding: 0;
-    margin: 20px;
+    margin: 0;
+    align-content: center;
+    box-sizing: border-box;
     overflow: hidden;
-
-}
-
-p {
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 14px;
 }
 
 .fundoJanelaCentral {
     position: relative;
-    top: 50%;
+    margin-top: 0;
+    top: 0px;
     left: 50%;
-    height: 600px;
-    width: 820px;
-    transform: translate(-50%, -50%);
-    border-radius: 3px;
+    transform: translate(-50%);
+    height: 643px;
+    width: 546px;
+    border-radius: 5px;
+    background-color: rgb(0, 47, 109);
     
 }
 
@@ -31,20 +28,19 @@ p {
     flex-direction: column;
     max-height: 490px;
     height: 490px;
-    width: 710px;
-    top: 50%;
+    width: 520px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
+    align-items: center;
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px 3px;
     border-radius: 3px;
     padding: 20px;
     padding-left: 10px;
-    padding-right: 5px;
-    margin-top: 30px;
+    padding-right: 10px;
     margin-bottom: 0;
+    margin-top: 0;
     overflow-y: auto;
-    margin: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -63,38 +59,54 @@ p {
 }
 
 textarea {
-    font-size: 16px;
-    height: 20px;
-    width: 100px;
+    font-size: 14px;
+    height: 18px;
+    width: 60px;
     text-align: left;
-    padding: 5px;
+    padding: 2px;
+    text-indent: 3px;
     border-radius: 3px;
     resize: none;
     outline: none;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 7px;
+    margin-right: 7px;
     text-transform: uppercase;
     border-color: rgb(209, 209, 209);
 }
 
 textarea#textMotivo {
     width: 230px;
+    height: 18px;
     font-size: 14px;
-    line-height: 20px;
+    padding: 2px;
 
 }
 
 p {
-    margin-left: 12px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-left: 6px;
+    font-size: 13px;
+}
+
+h1 {
+    position: relative;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding: 38px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 button#botaoAdd {
     position: absolute;
-    top: 35px;
-    right: 0px;
-    height: 32px;
-    width: 32px;
-    font-size: 25px;
+    top: 612px;
+    left: 555px;
+    height: 28px;
+    width: 28px;
+    font-size: 20px;
     line-height: 0;
     background-color: rgba(255, 255, 255, 0);
     border: none;
@@ -103,41 +115,24 @@ button#botaoAdd {
     border-radius: 3px;
 }
 button#botaoAdd:hover {
-    background-color: #064adc;
+    background-color: #00287d;
     color: white;
-    border: 1px solid #064adc;
+    border: 1px solid #29a9ff;
 }
 
-button#botaoEnviar {
-    position: relative;
-    top: -7px;
-    height: 32px;
-    width: 32px;
-    margin-left: 0px;
-    font-size: 25px;
-    padding: 0;
-    text-align: center;
-    line-height: 0;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    color: gray;
-}
-button#botaoEnviar:hover {
-    color: rgb(10, 2, 255);
-    border: solid 1px rgb(167, 193, 254);
-    border-radius: 3px;
-}
 
 button#botaoRemover {
     position: relative;
-    top: -11px;
-    height: 32px;
-    width: 32px;
+    top: -8px;
+    height: 20px;
+    width: 20px;
     margin-left: 5px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     padding: 0;
+    margin: 0;
     text-align: center;
+    text-indent: 1px;
     line-height: 0px;
     background-color: rgba(255, 255, 255, 0);
     border: none;
@@ -145,7 +140,7 @@ button#botaoRemover {
 }
 button#botaoRemover:hover {
     color: red;
-    border: solid 1px rgb(255, 178, 178);
+    border: 1px solid rgb(255, 178, 178);
     border-radius: 3px;
 }
 
