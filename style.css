@@ -9,14 +9,44 @@ html, body {
     overflow: hidden;
 }
 
+@media (max-width: 768px){
+    body {
+        zoom: 0.55;
+    }
+    h1 {
+        font-size: 28px !important;
+        padding: 22px !important;
+    }
+    p {
+        font-size: 14px !important;
+    }
+
+    #janelaCentral {
+        width: 548px !important;
+        margin-left: 1px !important;
+    }
+
+    button#botaoRemover {
+        font-size: 30px !important;
+        margin-left: 4px !important;
+    }
+
+    button#botaoAdd {
+        font-size: 40px !important;
+        margin-top: 10px !important;
+        margin-left: 5px !important;
+    }
+}
+
 .fundoJanelaCentral {
     position: relative;
     margin-top: 0;
+    box-sizing: border-box;
     top: 0px;
     left: 50%;
     transform: translate(-50%);
     height: 592px;
-    width: 572px;
+    width: 582px;
     border-radius: 5px;
     background-color: #002f6d;
     
@@ -28,9 +58,7 @@ html, body {
     flex-direction: column;
     max-height: 450px;
     height: 425px;
-    width: 540px;
-    left: 50%;
-    transform: translate(-50%);
+    width: 550px;
     background-color: rgb(255, 255, 255);
     border-radius: 3px;
     border-bottom-left-radius: 0;
@@ -47,11 +75,11 @@ html, body {
 
 .barraInferior {
     position: relative;
-    margin-left: 2.5px;
+    margin-left: 3px;
     margin-right: 2.5px;
     background-color: white;
     height: 479px;
-    width: 566px;
+    width: 576px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     background-color: rgb(233, 233, 233);
@@ -68,6 +96,10 @@ html, body {
 }
 ::-webkit-scrollbar-thumb {
     background-color: #888;
+}
+
+.grupoDados {
+    box-sizing: border-box;
 }
 
 textarea {
@@ -103,9 +135,10 @@ textarea#textTempo {
 }
 
 p {
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin-left: 8px;
     font-size: 13px;
+    font-weight: bold;
 }
 
 h1 {
@@ -123,7 +156,7 @@ h1 {
 button#botaoAdd {
     position: absolute;
     margin: 7px;
-    left: 532px;
+    left: 541px;
     height: 20px;
     width: 20px;
     font-size: 22px;
