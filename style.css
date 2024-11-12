@@ -15,10 +15,10 @@ html, body {
     top: 0px;
     left: 50%;
     transform: translate(-50%);
-    height: 643px;
-    width: 546px;
+    height: 592px;
+    width: 572px;
     border-radius: 5px;
-    background-color: rgb(0, 47, 109);
+    background-color: #002f6d;
     
 }
 
@@ -26,42 +26,54 @@ html, body {
     position: relative;
     display: flex;
     flex-direction: column;
-    max-height: 490px;
-    height: 490px;
-    width: 520px;
+    max-height: 450px;
+    height: 425px;
+    width: 540px;
     left: 50%;
     transform: translate(-50%);
-    align-items: center;
     background-color: rgb(255, 255, 255);
-    box-shadow: 1px 1px 3px;
     border-radius: 3px;
-    padding: 20px;
-    padding-left: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 10px;
+    padding-left: 15px;
     padding-right: 10px;
     margin-bottom: 0;
     margin-top: 0;
     overflow-y: auto;
+    overflow-y: overlay;
+    z-index: 2;
+}
+
+.barraInferior {
+    position: relative;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    background-color: white;
+    height: 479px;
+    width: 566px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: rgb(233, 233, 233);
 }
 
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
+    margin: 0;
 }
 ::-webkit-scrollbar-track {
     background-color: rgb(210, 210, 210);
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    margin: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Cor da barra de rolagem */
-    border: none;
-    border-radius: 5px;
+    background-color: #888;
 }
 
 textarea {
     font-size: 14px;
     height: 18px;
-    width: 60px;
+    width: 59px;
     text-align: left;
     padding: 2px;
     text-indent: 3px;
@@ -72,19 +84,27 @@ textarea {
     margin-right: 7px;
     text-transform: uppercase;
     border-color: rgb(209, 209, 209);
+    font-weight: bold;
 }
 
 textarea#textMotivo {
-    width: 230px;
+    width: 170px;
     height: 18px;
     font-size: 14px;
     padding: 2px;
 
 }
 
+textarea#textTempo {
+    width: 50px;
+    height: 18px;
+    font-size: 14px;
+    padding: 2px;
+}
+
 p {
     font-family:Georgia, 'Times New Roman', Times, serif;
-    margin-left: 6px;
+    margin-left: 8px;
     font-size: 13px;
 }
 
@@ -95,38 +115,37 @@ h1 {
     text-align: center;
     margin-bottom: 0;
     padding-bottom: 0;
-    padding: 38px;
-    font-size: 30px;
+    padding: 42px;
+    font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 button#botaoAdd {
     position: absolute;
-    top: 612px;
-    left: 555px;
-    height: 28px;
-    width: 28px;
-    font-size: 20px;
+    margin: 7px;
+    left: 532px;
+    height: 20px;
+    width: 20px;
+    font-size: 22px;
+    padding: 0;
     line-height: 0;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: #ffffff00;
     border: none;
-    color: #00287d;
-    border: 1px solid #6b8acb;
-    border-radius: 3px;
+    color: #8b8b8b;
+    font-weight: bold;
 }
 button#botaoAdd:hover {
-    background-color: #00287d;
-    color: white;
-    border: 1px solid #29a9ff;
+    color: #002f6d;
+    border-radius: 3px;
 }
 
 
 button#botaoRemover {
     position: relative;
     top: -8px;
+    right: 5px;
     height: 20px;
     width: 20px;
-    margin-left: 5px;
     font-weight: bold;
     font-size: 14px;
     padding: 0;
@@ -134,13 +153,12 @@ button#botaoRemover {
     text-align: center;
     text-indent: 1px;
     line-height: 0px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: #ffffff00;
     border: none;
-    color: rgb(169, 169, 169);
+    color: #8b8b8b;
 }
 button#botaoRemover:hover {
     color: red;
-    border: 1px solid rgb(255, 178, 178);
     border-radius: 3px;
 }
 
@@ -153,6 +171,10 @@ button#botaoRemover:hover {
 .linhaDeDados {
     display: flex;
     flex-direction: row;
+    margin-right: 1px;
 }
 
+.verde {
+    background-color: #c1fed2;
+}
 

@@ -8,31 +8,37 @@
 </head>
 <body>
     <div class="fundoJanelaCentral">
-        <h1>Controle de Corte de Cargas</h1>
-        <div id="janelaCentral">
-            <div class="linhaDeDados">
-                <div class="grupoDados">
-                    <p>No. Voo</p>
-                    <textarea name="textNumeroVoo"></textarea>
-                </div>
-                <div class="grupoDados">
-                    <p>DEP/DEST</p>
-                    <textarea name="textOrigemDestino"></textarea>
-                </div>
-                <div class="grupoDados">
-                    <p>Peso Carga</p>
-                    <textarea name="textPesoCarga"></textarea>
-                </div>
-                <div class="grupoDados">
-                    <p>Motivo</p>
-                    <div class="inputComBotao">
-                        <textarea name="motivo" id="textMotivo" maxlength="29"></textarea>
-                        <button id="botaoRemover" onclick="removerLinha(this)">✖</button>
+        <h1>Anotações para o controle de corte de cargas</h1>
+        <div class="barraInferior">
+            <div id="janelaCentral">
+                <div class="linhaDeDados">
+                    <div class="grupoDados">
+                        <p>No. Voo</p>
+                        <textarea name="textNumeroVoo" maxlength="4"></textarea>
+                    </div>
+                    <div class="grupoDados">
+                        <p>DEP/DEST</p>
+                        <textarea name="textOrigemDestino" class="depDest" maxlength="7"></textarea>
+                    </div>
+                    <div class="grupoDados">
+                        <p>Peso (Kg)</p>
+                        <textarea name="textPesoCarga" maxlength="4"></textarea>
+                    </div>
+                    <div class="grupoDados">
+                        <p>Motivo</p>
+                        <textarea name="motivo" id="textMotivo" maxlength="21"></textarea>
+                    </div>
+                    <div class="grupoDados">
+                        <p>ETD</p>
+                        <div class="inputComBotao">
+                            <textarea name="motivo" class="horario"></textarea>
+                            <button id="botaoRemover" onclick="removerLinha(this)">✖</button>
+                        </div>
                     </div>
                 </div>
             </div>
+            <button id="botaoAdd" onclick="addLinha()">+</button>
         </div>
-        <button id="botaoAdd" onclick="addLinha()">+</button>
     </div>
 </body>
 <script src="script.js"></script>
