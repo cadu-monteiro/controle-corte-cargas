@@ -42,7 +42,7 @@ function addLinha() {
     novaLinha.querySelectorAll('.depDest').forEach(addBarraListener);
     novaLinha.querySelectorAll('.horario').forEach(addHorarioListener);
 
-    // Verificar horários na nova linha
+    
     verificarHorarios();
 }
 
@@ -80,8 +80,8 @@ function addHorarioListener(textarea) {
 
 function verificarHorarios() {
     const agora = new Date();
-    const horasAtuais = agora.getHours();
-    const minutosAtuais = agora.getMinutes();
+    const horasAtuais = agora.getUTCHours();
+    const minutosAtuais = agora.getUTCMinutes();
 
     document.querySelectorAll('.linhaDeDados').forEach(linha => {
         const horarioTextarea = linha.querySelector('.horario');
