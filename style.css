@@ -6,7 +6,6 @@ html, body {
     margin: 0;
     align-content: center;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 @media (max-width: 768px){
@@ -114,7 +113,6 @@ textarea {
     outline: none;
     margin-left: 7px;
     margin-right: 7px;
-    text-transform: uppercase;
     border-color: rgb(209, 209, 209);
     font-weight: bold;
 }
