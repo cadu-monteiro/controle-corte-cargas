@@ -172,6 +172,12 @@ button#botaoAdd:hover {
     border-radius: 3px;
 }
 
+input#checkbox {
+    position: relative;
+    top: -60px;
+    margin-left: 81.5px;
+    
+}
 
 button#botaoRemover {
     position: relative;

@@ -13,30 +13,34 @@ function addLinha() {
     novaLinha.className = 'linhaDeDados';
     novaLinha.innerHTML = `
         <div class="linhaDeDados">
-            <div class="grupoDados">
-                <p>No. Voo</p>
-                <textarea name="textNumeroVoo" maxlength="4"></textarea>
-            </div>
-            <div class="grupoDados">
-                <p>DEP/DEST</p>
-                <textarea name="textOrigemDestino" class="depDest" maxlength="7"></textarea>
-            </div>
-            <div class="grupoDados">
-                <p>Peso (Kg)</p>
-                <textarea name="textPesoCarga" maxlength="4"></textarea>
-            </div>
-            <div class="grupoDados">
-                <p>Motivo</p>
-                <textarea name="motivo" id="textMotivo" maxlength="21"></textarea>
-            </div>
-            <div class="grupoDados">
-                <p>ETD</p>
-                <div class="inputComBotao">
-                    <textarea name="horario" class="horario" maxlength="5"></textarea>
-                    <button id="botaoRemover" onclick="removerLinha(this)">✖</button>
-                </div>
-            </div>
-        </div>`
+                    <div class="grupoDados">
+                        <p>No. Voo</p>
+                        <textarea name="textNumeroVoo" maxlength="4"></textarea>
+                    </div>
+                    <div class="grupoDados">
+                        <p>DEP/DEST</p>
+                        <textarea name="textOrigemDestino" class="depDest" maxlength="7"></textarea>
+                    </div>
+                    <div class="grupoDados">
+                        <p>Peso (Kg)</p>
+                        <textarea name="textPesoCarga" maxlength="4"></textarea>
+                    </div>
+                    <div class="grupoDados">
+                        <p>Motivo</p>
+                        <textarea name="motivo" id="textMotivo" maxlength="21"></textarea>
+                    </div>
+                    <div class="grupoDados">
+                        <p>ETD</p>
+                            
+                        <div class="inputComBotao">
+                            <textarea name="motivo" class="horario"></textarea>
+                            <button id="botaoRemover" onclick="removerLinha(this)">✖</button>
+                        </div>
+                        <div id="checkbox">
+                            <input id="checkbox" type="checkbox">
+                        </div>
+                    </div>
+                </div>`
     janelaCentral.appendChild(novaLinha);
 
     novaLinha.querySelectorAll('.depDest').forEach(addBarraListener);
