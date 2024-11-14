@@ -45,7 +45,7 @@ html, body {
     }
 
     input[type="checkbox"] {
-        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
     }
 }
 

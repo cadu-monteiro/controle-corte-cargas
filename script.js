@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.depDest').forEach(addBarraListener);
-    document.querySelectorAll('.horario').forEach(addHorarioListener);
+    document.querySelectorAll('.depDest').forEach(addBarraListener)
+    document.querySelectorAll('.horario').forEach(addHorarioListener)
 
-    setInterval(verificarHorarios, 10000);
-    verificarHorarios();
-});
+    setInterval(verificarHorarios, 10000)
+    verificarHorarios()
+})
 
 function addLinha() {
-    var janelaCentral = document.getElementById('janelaCentral');
-    var novaLinha = document.createElement('div');
-    novaLinha.className = 'linhaDeDados';
+    var janelaCentral = document.getElementById('janelaCentral')
+    var novaLinha = document.createElement('div')
+    novaLinha.className = 'linhaDeDados'
     novaLinha.innerHTML = `
         <div class="linhaDeDados">
                     <div class="grupoDados">
@@ -35,7 +35,7 @@ function addLinha() {
                             <textarea name="motivo" class="horario"></textarea>
                             <button id="botaoRemover" onclick="removerLinha(this)">✖</button>
                         </div>
-                        <div class="checkbox">
+                        <div class="checkbox" style="display: none;">
                             <input type="checkbox">
                         </div>
                         <div class="status">
@@ -43,97 +43,99 @@ function addLinha() {
                             <p class="feito" style="display: none;">Feito</p>
                         </div>
                     </div>
-                </div>`;
-    janelaCentral.appendChild(novaLinha);
+                </div>`
+    janelaCentral.appendChild(novaLinha)
 
-    novaLinha.querySelectorAll('.depDest').forEach(addBarraListener);
-    novaLinha.querySelectorAll('.horario').forEach(addHorarioListener);
-    novaLinha.querySelector('.checkbox input').addEventListener('change', atualizarStatus);
+    novaLinha.querySelectorAll('.depDest').forEach(addBarraListener)
+    novaLinha.querySelectorAll('.horario').forEach(addHorarioListener)
+    novaLinha.querySelector('.checkbox input').addEventListener('change', atualizarStatus)
 
-    verificarHorarios();
+    verificarHorarios()
 }
 
 function removerLinha(botao) {
-    const linhaParaRemover = botao.closest('.linhaDeDados');
-    linhaParaRemover.remove();
+    const linhaParaRemover = botao.closest('.linhaDeDados')
+    linhaParaRemover.remove()
 }
 
 function addBarraListener(textarea) {
     textarea.addEventListener('input', function () {
-        var texto = this.value.replace(/\//g, '');
-        this.value = this.value.replace(/\d/g, '');
+        var texto = this.value.replace(/\//g, '')
+        this.value = this.value.replace(/\d/g, '')
 
         if (texto.length > 3) {
-            this.value = texto.slice(0, 3) + '/' + texto.slice(3);
+            this.value = texto.slice(0, 3) + '/' + texto.slice(3)
         }
-    });
+    })
 }
 
 function addHorarioListener(textarea) {
     textarea.addEventListener('input', function () {
-        let texto = this.value.replace(/\D/g, '');
+        let texto = this.value.replace(/\D/g, '')
 
         if (texto.length > 4) {
-            texto = texto.slice(0, 4);
+            texto = texto.slice(0, 4)
         }
 
         if (texto.length >= 3) {
-            texto = texto.slice(0, 2) + ':' + texto.slice(2, 4);
+            texto = texto.slice(0, 2) + ':' + texto.slice(2, 4)
         }
 
-        this.value = texto;
-    });
+        this.value = texto
+    })
 }
 
 function verificarHorarios() {
-    const agora = new Date();
-    const horasAtuais = agora.getUTCHours();
-    const minutosAtuais = agora.getUTCMinutes();
+    const agora = new Date()
+    const horasAtuais = agora.getUTCHours()
+    const minutosAtuais = agora.getUTCMinutes()
 
     document.querySelectorAll('.linhaDeDados').forEach(linha => {
-        const horarioTextarea = linha.querySelector('.horario');
-        const checkbox = linha.querySelector('.checkbox input');
-        const pendente = linha.querySelector('.pendente');
-        const feito = linha.querySelector('.feito');
+        const horarioTextarea = linha.querySelector('.horario')
+        const checkboxContainer = linha.querySelector('.checkbox')
+        const checkbox = linha.querySelector('.checkbox input')
+        const pendente = linha.querySelector('.pendente')
+        const feito = linha.querySelector('.feito')
 
         if (horarioTextarea) {
-            const [horasDigitadas, minutosDigitadas] = horarioTextarea.value.split(':').map(Number);
+            const [horasDigitadas, minutosDigitadas] = horarioTextarea.value.split(':').map(Number)
 
             if (horasDigitadas !== undefined && minutosDigitadas !== undefined) {
                 if (horasDigitadas < horasAtuais || (horasDigitadas === horasAtuais && minutosDigitadas < minutosAtuais)) {
-                    linha.classList.add('verde');
-                    checkbox.disabled = false;
+                    linha.classList.add('verde')
+                    checkboxContainer.style.display = 'block'
 
                     if (!checkbox.checked) {
-                        pendente.style.display = 'block';
-                        feito.style.display = 'none';
+                        pendente.style.display = 'block'
+                        feito.style.display = 'none'
                     }
                 } else {
-                    linha.classList.remove('verde');
-                    pendente.style.display = 'none';
-                    feito.style.display = 'none';
-                    checkbox.disabled = true;
+                    linha.classList.remove('verde')
+                    checkboxContainer.style.display = 'none'
+                    pendente.style.display = 'none'
+                    feito.style.display = 'none'
+                    checkbox.disabled = true
                 }
             }
         }
-    });
+    })
 }
 
 function atualizarStatus(event) {
-    const checkbox = event.target;
-    const linha = checkbox.closest('.linhaDeDados');
-    const pendente = linha.querySelector('.pendente');
-    const feito = linha.querySelector('.feito');
+    const checkbox = event.target
+    const linha = checkbox.closest('.linhaDeDados')
+    const pendente = linha.querySelector('.pendente')
+    const feito = linha.querySelector('.feito')
 
     if (checkbox.checked) {
-        pendente.style.display = 'none';
-        feito.style.display = 'block';
+        pendente.style.display = 'none'
+        feito.style.display = 'block'
     } else {
-        pendente.style.display = 'block';
-        feito.style.display = 'none';
+        pendente.style.display = 'block'
+        feito.style.display = 'none'
     }
 }
 
 document.querySelectorAll('.checkbox input').forEach(input => {
-    input.addEventListener('change', atualizarStatus);
-});
+    input.addEventListener('change', atualizarStatus)
+})
