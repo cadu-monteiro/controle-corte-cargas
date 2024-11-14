@@ -14,11 +14,11 @@ function addLinha() {
     novaLinha.innerHTML = `
         <div class="linhaDeDados">
                     <div class="grupoDados">
-                        <p>No. Voo</p>
+                        <p>Voo</p>
                         <textarea name="textNumeroVoo" maxlength="4"></textarea>
                     </div>
                     <div class="grupoDados">
-                        <p>DEP/DEST</p>
+                        <p>Dep / Dest</p>
                         <textarea name="textOrigemDestino" class="depDest" maxlength="7"></textarea>
                     </div>
                     <div class="grupoDados">
