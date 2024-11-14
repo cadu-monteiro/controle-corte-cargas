@@ -179,10 +179,10 @@ button#botaoAdd:hover {
     border-radius: 3px;
 }
 
-input#checkbox {
+.checkbox {
     position: relative; 
     top: -60px;
-    margin-left: 81.5px;
+    margin-left: 78px;
     
 }
 
@@ -222,5 +222,37 @@ button#botaoRemover:hover {
 
 .verde {
     background-color: #c1fed2;
+}
+
+.status {
+    position: relative;
+    top: -30px;
+    height: 0px;
+    left: 0px;
+    text-align: center;
+}
+
+p.pendente {
+    position: relative;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+    background-color: #d30909;
+    border-radius: 4px;
+    padding: 2px;
+    
+}
+
+p.feito {
+    position: relative;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+    background-color: #42892e;
+    border-radius: 4px;
+    padding: 2px;
+    
 }
 

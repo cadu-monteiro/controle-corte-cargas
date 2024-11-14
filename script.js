@@ -2,9 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.depDest').forEach(addBarraListener);
     document.querySelectorAll('.horario').forEach(addHorarioListener);
 
-    
-    setInterval(verificarHorarios, 10000)
-    verificarHorarios()
+    setInterval(verificarHorarios, 10000);
+    verificarHorarios();
 });
 
 function addLinha() {
@@ -36,17 +35,21 @@ function addLinha() {
                             <textarea name="motivo" class="horario"></textarea>
                             <button id="botaoRemover" onclick="removerLinha(this)">✖</button>
                         </div>
-                        <div id="checkbox">
-                            <input id="checkbox" type="checkbox">
+                        <div class="checkbox">
+                            <input type="checkbox">
+                        </div>
+                        <div class="status">
+                            <p class="pendente" style="display: none;">Pendente</p>
+                            <p class="feito" style="display: none;">Feito</p>
                         </div>
                     </div>
-                </div>`
+                </div>`;
     janelaCentral.appendChild(novaLinha);
 
     novaLinha.querySelectorAll('.depDest').forEach(addBarraListener);
     novaLinha.querySelectorAll('.horario').forEach(addHorarioListener);
+    novaLinha.querySelector('.checkbox input').addEventListener('change', atualizarStatus);
 
-    
     verificarHorarios();
 }
 
@@ -89,16 +92,48 @@ function verificarHorarios() {
 
     document.querySelectorAll('.linhaDeDados').forEach(linha => {
         const horarioTextarea = linha.querySelector('.horario');
+        const checkbox = linha.querySelector('.checkbox input');
+        const pendente = linha.querySelector('.pendente');
+        const feito = linha.querySelector('.feito');
+
         if (horarioTextarea) {
             const [horasDigitadas, minutosDigitadas] = horarioTextarea.value.split(':').map(Number);
 
             if (horasDigitadas !== undefined && minutosDigitadas !== undefined) {
                 if (horasDigitadas < horasAtuais || (horasDigitadas === horasAtuais && minutosDigitadas < minutosAtuais)) {
                     linha.classList.add('verde');
+                    checkbox.disabled = false;
+
+                    if (!checkbox.checked) {
+                        pendente.style.display = 'block';
+                        feito.style.display = 'none';
+                    }
                 } else {
                     linha.classList.remove('verde');
+                    pendente.style.display = 'none';
+                    feito.style.display = 'none';
+                    checkbox.disabled = true;
                 }
             }
         }
     });
 }
+
+function atualizarStatus(event) {
+    const checkbox = event.target;
+    const linha = checkbox.closest('.linhaDeDados');
+    const pendente = linha.querySelector('.pendente');
+    const feito = linha.querySelector('.feito');
+
+    if (checkbox.checked) {
+        pendente.style.display = 'none';
+        feito.style.display = 'block';
+    } else {
+        pendente.style.display = 'block';
+        feito.style.display = 'none';
+    }
+}
+
+document.querySelectorAll('.checkbox input').forEach(input => {
+    input.addEventListener('change', atualizarStatus);
+});
