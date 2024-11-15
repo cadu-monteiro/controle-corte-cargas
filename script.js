@@ -53,6 +53,9 @@ function addLinha() {
     novaLinha.querySelectorAll('.depDest').forEach(addBarraListener)
     novaLinha.querySelectorAll('.horario').forEach(addHorarioListener)
     novaLinha.querySelector('.checkbox input').addEventListener('change', atualizarStatus)
+    novaLinha.querySelector('.depDest').addEventListener('input', function() {
+        this.value = this.value.toUpperCase()
+    })
 
     verificarHorarios()
 }
