@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.depDest').forEach(addBarraListener)
     document.querySelectorAll('.horario').forEach(addHorarioListener)
 
+    document.querySelectorAll('textarea').forEach(addUppercaseListener)
+
     setInterval(verificarHorarios, 10000)
     verificarHorarios()
 })
@@ -104,6 +106,7 @@ function verificarHorarios() {
                 if (horasDigitadas < horasAtuais || (horasDigitadas === horasAtuais && minutosDigitadas < minutosAtuais)) {
                     linha.classList.add('verde')
                     checkboxContainer.style.display = 'block'
+                    checkbox.disabled = false
 
                     if (!checkbox.checked) {
                         pendente.style.display = 'block'
