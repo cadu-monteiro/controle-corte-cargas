@@ -127,6 +127,7 @@ textarea {
     margin-right: 7px;
     border-color: rgb(209, 209, 209);
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 textarea#textMotivo {

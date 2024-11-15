@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.depDest').forEach(addBarraListener)
     document.querySelectorAll('.horario').forEach(addHorarioListener)
 
-    document.querySelectorAll('textarea').forEach(addUppercaseListener)
+    document.querySelector('.depDest').addEventListener('input', function() {
+        this.value = this.value.toUpperCase()
+    })
 
     setInterval(verificarHorarios, 10000)
     verificarHorarios()
